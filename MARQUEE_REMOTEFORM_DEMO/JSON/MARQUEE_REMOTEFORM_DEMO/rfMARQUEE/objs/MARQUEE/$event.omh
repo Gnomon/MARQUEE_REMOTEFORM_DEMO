@@ -1,0 +1,13 @@
+Calculate MyArgs as pData
+
+On evFocus
+	JavaScript: console.log(__form.clientEvCode)
+	JavaScript: console.log(MyArgs)
+	
+On evChartClick
+	JavaScript: console.log(__form.clientEvCode)
+	JavaScript: console.log(MyArgs)
+	
+On evSeriesFilter
+	JavaScript: console.log(__form.clientEvCode)
+	JavaScript: console.log(MyArgs)

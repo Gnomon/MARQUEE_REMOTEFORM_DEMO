@@ -1,0 +1,7 @@
+JavaScript: $cform=__form
+JavaScript: $cinst=__form
+Do LIST.$define(name,weight,price)
+Do LIST.$add('Apple',10,5)
+Do LIST.$add('Orange',6,7)
+Do LIST.$add('Banana',8,3)
+Quit method

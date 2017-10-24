@@ -1,0 +1,10 @@
+Set reference MyRef to $cobj
+JavaScript: MyCss=MyRef.callMethod('$css')
+
+Begin text block
+Text: {[MyCss]}
+Text: {<div id="chart"><span>Loading...</span></div>}
+End text block
+Get text block MyHTML
+
+Do MyRef.$html.$assign(MyHTML)

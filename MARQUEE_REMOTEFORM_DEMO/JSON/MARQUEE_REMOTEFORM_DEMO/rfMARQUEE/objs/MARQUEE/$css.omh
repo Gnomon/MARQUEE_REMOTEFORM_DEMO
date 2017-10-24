@@ -1,0 +1,18 @@
+Begin text block
+Text: {<style>}
+Text: {html, body {}
+Text: {width: 100%;}
+Text: {height: 100%;}
+Text: {margin: 0px;}
+Text: {border: 0;}
+Text: {overflow: hidden; /*  Disable scrollbars */}
+Text: {display: block;  /* No floating content on sides */}
+Text: {/* Fallback for web browsers that don't support RGBa */}
+Text: {background-color: rgb(0, 0, 0);}
+Text: {/* RGBa with 0.0 opacity */}
+Text: {background-color: rgba(0, 0, 0, 0.0);}
+Text: {}}
+Text: {</style>}
+End text block
+Get text block MyCss
+Quit method MyCss

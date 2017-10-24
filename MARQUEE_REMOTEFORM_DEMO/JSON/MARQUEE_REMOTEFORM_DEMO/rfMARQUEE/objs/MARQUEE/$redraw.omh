@@ -1,0 +1,18 @@
+Set reference MyRef to $cobj
+JavaScript: var chartElement=$(MyRef.elem).find('div')[1]
+Calculate MyDataName as $cobj.$dataname
+Calculate MyConfigName as $cobj.$userinfo
+
+JavaScript: var props = {
+JavaScript: data: __form.get(MyDataName).$lstDataObj(),
+JavaScript: config: JSON.parse(__form.get(MyConfigName)),
+JavaScript: width: parseInt(MyRef.elem.style.width),
+JavaScript: height: parseInt(MyRef.elem.style.height),
+JavaScript: onChartClick: function(args) {__form.clientEvCode='evChartClick';MyRef.callMethodEx('$event',0,Marquee_filterArgs(args))},
+JavaScript: onFocus: function(args) {__form.clientEvCode='evFocus';MyRef.callMethodEx('$event',0,Marquee_filterArgs(args))},
+JavaScript: onSeriesFilter: function(args) {__form.clientEvCode='evSeriesFilter';MyRef.callMethodEx('$event',0,Marquee_filterArgs(args))}
+JavaScript: }
+
+JavaScript: ReactDOM.render(React.createElement(Marquee.DefaultChart, props),chartElement)
+
+Quit method

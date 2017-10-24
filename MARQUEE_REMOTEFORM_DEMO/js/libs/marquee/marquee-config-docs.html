@@ -1,0 +1,1558 @@
+<html>
+<head>
+<title>Marquee Config Docs</title>
+<style>
+table { border-collapse: collapse !important; }
+table th { text-align: left; }
+table td, table th { background-color: #fff !important; border: 1px solid #eceeef !important; padding: .75rem; vertical-align: top; }
+table thead th { vertical-align: bottom; border-bottom: 2px solid #eceeef; }
+table thead td { border-bottom-width: 2px; }
+.colorIcon { display: inline-block; vertical-align: middle; width: 8px; height: 8px; border: 2px solid #eceeef; }
+</style>
+</head>
+<body>
+<div>
+<h2>Marquee Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th><th>Details</th>
+</tr>
+</thead>
+<tr>
+<td>animationConfig</td><td>Configure the chart animation settings</td><td>should be an object</td><td>{}</td><td><a href="#animationConfig">Details</a></td>
+</tr>
+<tr>
+<td>backgroundConfig</td><td>Configure the background styling of the chart</td><td>should be an object</td><td>{}</td><td><a href="#backgroundConfig">Details</a></td>
+</tr>
+<tr>
+<td>chartConfig</td><td>Configure general settings of the chart</td><td>should be an object</td><td>{}</td><td><a href="#chartConfig">Details</a></td>
+</tr>
+<tr>
+<td>colorPaletteConfig</td><td>Configure the color palettes to use for collections of series</td><td>should be an object</td><td>{}</td><td><a href="#colorPaletteConfig">Details</a></td>
+</tr>
+<tr>
+<td>crosshairConfig</td><td>Configure the crosshair styling and behavior when a group and/or series is focused</td><td>should be an object</td><td>{}</td><td><a href="#crosshairConfig">Details</a></td>
+</tr>
+<tr>
+<td>groupAxisConfig</td><td>Configure the chart group axis content and styling</td><td>should be an object</td><td>{}</td><td><a href="#groupAxisConfig">Details</a></td>
+</tr>
+<tr>
+<td>legendConfig</td><td>Configure the chart legend which itemizes the series</td><td>should be an object</td><td>{}</td><td><a href="#legendConfig">Details</a></td>
+</tr>
+<tr>
+<td>linearGradientConfigs</td><td>Configure linear gradients to be applied to series</td><td>should be an array with elements that should be an object</td><td>[]</td><td><a href="#linearGradientConfigs">Details</a></td>
+</tr>
+<tr>
+<td>radialGradientConfigs</td><td>Configure radial gradients to be applied to series</td><td>should be an array with elements that should be an object</td><td>[]</td><td><a href="#radialGradientConfigs">Details</a></td>
+</tr>
+<tr>
+<td>seriesAxisConfigs</td><td>Configure the chart series axes content and styling</td><td>should be a non-empty array with elements that should be an object</td><td>[]</td><td><a href="#seriesAxisConfigs">Details</a></td>
+</tr>
+<tr>
+<td>seriesConfigs</td><td>Configure the chart series</td><td>should be a non-empty array with elements that should be an object</td><td>[]</td><td><a href="#seriesConfigs">Details</a></td>
+</tr>
+<tr>
+<td>seriesGroupConfigs</td><td>Configure the grouping of series</td><td>should be an array with elements that should be an object</td><td>[]</td><td><a href="#seriesGroupConfigs">Details</a></td>
+</tr>
+<tr>
+<td>seriesStackConfigs</td><td>Configure the stacking of series</td><td>should be an array with elements that should be an object</td><td>[]</td><td><a href="#seriesStackConfigs">Details</a></td>
+</tr>
+<tr>
+<td>titleConfig</td><td>Configure the chart title</td><td>should be an object</td><td>{}</td><td><a href="#titleConfig">Details</a></td>
+</tr>
+<tr>
+<td>tooltipConfig</td><td>Configure the chart tooltip styling and behavior</td><td>should be an object</td><td>{}</td><td><a href="#tooltipConfig">Details</a></td>
+</tr>
+<tr>
+<td>version</td><td>The version of the configuration format</td><td>should be equal to "1.0.2"</td><td></td><td></td>
+</tr>
+</table>
+</div>
+<div id="animationConfig">
+<h2>Animation Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="animationConfig.animate">
+<td><a href="#animationConfig.animate">animate</a></td><td>whether all animation should be enabled or disabled</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="animationConfig.collapseDuration">
+<td><a href="#animationConfig.collapseDuration">collapseDuration</a></td><td>the maximum duration for the axis collapse animation phase when new data is removed from the chart</td><td>should be a number >= to 0</td><td><div>1000</div>
+</td>
+</tr>
+<tr id="animationConfig.expansionDuration">
+<td><a href="#animationConfig.expansionDuration">expansionDuration</a></td><td>the maximum duration for the axis expansion animation phase when new data is added to the chart</td><td>should be a number >= to 0</td><td><div>1000</div>
+</td>
+</tr>
+<tr id="animationConfig.focusDuration">
+<td><a href="#animationConfig.focusDuration">focusDuration</a></td><td>the duration of animation showing the transition between focus on a specific series or group value</td><td>should be a number >= to 0</td><td><div>1000</div>
+</td>
+</tr>
+<tr id="animationConfig.initialDuration">
+<td><a href="#animationConfig.initialDuration">initialDuration</a></td><td>the maximum duration for the initial animation when chart data is first loaded</td><td>should be a number >= to 0</td><td><div>1000</div>
+</td>
+</tr>
+<tr id="animationConfig.valueChangeDuration">
+<td><a href="#animationConfig.valueChangeDuration">valueChangeDuration</a></td><td>the maximum duration for the value change animation phase when data in the chart changes</td><td>should be a number >= to 0</td><td><div>1000</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="backgroundConfig">
+<h2>Background Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="backgroundConfig.backgroundColor">
+<td><a href="#backgroundConfig.backgroundColor">backgroundColor</a></td><td>the background color for the series drawing area</td><td>should be a valid color or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="chartConfig">
+<h2>Chart Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="chartConfig.inverted">
+<td><a href="#chartConfig.inverted">inverted</a></td><td>whether the group axis should be left to right (false) or top to bottom (true)</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="chartConfig.margins">
+<td><a href="#chartConfig.margins">margins</a></td><td>the margins (in pixels) for the top, right, bottom and left sides of the chart</td><td>should be an object with properties [ "top", "right", "bottom", "left" ] all of which should be a number >= to 0</td><td><div>{
+top: 5
+right: 5
+bottom: 5
+left: 5}
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="colorPaletteConfig">
+<h2>Color Palette Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="colorPaletteConfig.label">
+<td><a href="#colorPaletteConfig.label">label</a></td><td>the color palette to use for series labels that are colored by series or group index</td><td>should be an object with properties [ "strokeColors", "fillColors" ] all of which should be a non-empty array with elements that should be a valid color</td><td><div>{
+strokeColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>
+fillColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>}
+</div>
+</td>
+</tr>
+<tr id="colorPaletteConfig.labelFocused">
+<td><a href="#colorPaletteConfig.labelFocused">labelFocused</a></td><td>the color palette to use for focused series labels that are colored by series or group index</td><td>should be an object with properties [ "strokeColors", "fillColors" ] all of which should be a non-empty array with elements that should be a valid color</td><td><div>{
+strokeColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>
+fillColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>}
+</div>
+</td>
+</tr>
+<tr id="colorPaletteConfig.marker">
+<td><a href="#colorPaletteConfig.marker">marker</a></td><td>the color palette to use for series markers that are colored by series or group index</td><td>should be an object with properties [ "strokeColors", "fillColors" ] all of which should be a non-empty array with elements that should be a valid color</td><td><div>{
+strokeColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>
+fillColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>}
+</div>
+</td>
+</tr>
+<tr id="colorPaletteConfig.markerFocused">
+<td><a href="#colorPaletteConfig.markerFocused">markerFocused</a></td><td>the color palette to use for focused series markers that are colored by series or group index</td><td>should be an object with properties [ "strokeColors", "fillColors" ] all of which should be a non-empty array with elements that should be a valid color</td><td><div>{
+strokeColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>
+fillColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>}
+</div>
+</td>
+</tr>
+<tr id="colorPaletteConfig.series">
+<td><a href="#colorPaletteConfig.series">series</a></td><td>the color palette to use for series shapes that are colored by series or group index</td><td>should be an object with properties [ "strokeColors", "fillColors" ] all of which should be a non-empty array with elements that should be a valid color</td><td><div>{
+strokeColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>
+fillColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>}
+</div>
+</td>
+</tr>
+<tr id="colorPaletteConfig.seriesFocused">
+<td><a href="#colorPaletteConfig.seriesFocused">seriesFocused</a></td><td>the color palette to use for focused series shapes that are colored by series or group index</td><td>should be an object with properties [ "strokeColors", "fillColors" ] all of which should be a non-empty array with elements that should be a valid color</td><td><div>{
+strokeColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>
+fillColors: <span class="colorIcon" style="background-color: #1f77b4"></span><span class="colorIcon" style="background-color: #ff7f0e"></span><span class="colorIcon" style="background-color: #2ca02c"></span><span class="colorIcon" style="background-color: #d62728"></span><span class="colorIcon" style="background-color: #9467bd"></span><span class="colorIcon" style="background-color: #8c564b"></span><span class="colorIcon" style="background-color: #e377c2"></span><span class="colorIcon" style="background-color: #7f7f7f"></span><span class="colorIcon" style="background-color: #bcbd22"></span><span class="colorIcon" style="background-color: #17becf"></span><span class="colorIcon" style="background-color: #aec7e8"></span><span class="colorIcon" style="background-color: #ffbb78"></span><span class="colorIcon" style="background-color: #98df8a"></span><span class="colorIcon" style="background-color: #ff9896"></span><span class="colorIcon" style="background-color: #c5b0d5"></span><span class="colorIcon" style="background-color: #c49c94"></span><span class="colorIcon" style="background-color: #f7b6d2"></span><span class="colorIcon" style="background-color: #c7c7c7"></span><span class="colorIcon" style="background-color: #dbdb8d"></span><span class="colorIcon" style="background-color: #9edae5"></span>}
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="crosshairConfig">
+<h2>Crosshair Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="crosshairConfig.lineColor">
+<td><a href="#crosshairConfig.lineColor">lineColor</a></td><td>the color to use when showing the crosshair lines</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(0,0,0,0.3)"></span></div>
+</td>
+</tr>
+<tr id="crosshairConfig.lineDashArray">
+<td><a href="#crosshairConfig.lineDashArray">lineDashArray</a></td><td>the dash array pattern to use when drawing the crosshair lines (use null for none)</td><td>should be a valid dash array or be equal to null</td><td><div>"10, 5"</div>
+</td>
+</tr>
+<tr id="crosshairConfig.lineWidth">
+<td><a href="#crosshairConfig.lineWidth">lineWidth</a></td><td>the stroke width (in pixels) of the crosshair lines</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="crosshairConfig.showBehindTooltip">
+<td><a href="#crosshairConfig.showBehindTooltip">showBehindTooltip</a></td><td>whether to show the crosshair lines for sections where they are overlapped by the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="crosshairConfig.showGroup">
+<td><a href="#crosshairConfig.showGroup">showGroup</a></td><td>whether or not crosshair lines for focused groups should be shown</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="crosshairConfig.showSeries">
+<td><a href="#crosshairConfig.showSeries">showSeries</a></td><td>whether or not crosshair lines for focused series should be shown</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="crosshairConfig.visible">
+<td><a href="#crosshairConfig.visible">visible</a></td><td>whether or not crosshairs should be shown when a group or series is focused</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="groupAxisConfig">
+<h2>Group Axis Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="groupAxisConfig.axisLine">
+<td><a href="#groupAxisConfig.axisLine">axisLine</a></td><td>whether to show a line along the length of the axis</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.axisLineColor">
+<td><a href="#groupAxisConfig.axisLineColor">axisLineColor</a></td><td>the color of the line shown along the axis</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #000000"></span></div>
+</td>
+</tr>
+<tr id="groupAxisConfig.axisLineDashArray">
+<td><a href="#groupAxisConfig.axisLineDashArray">axisLineDashArray</a></td><td>the dash array pattern to use when drawing the line shown along the axis (use null for none)</td><td>should be a valid dash array or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.axisLineMargin">
+<td><a href="#groupAxisConfig.axisLineMargin">axisLineMargin</a></td><td>the margin (in pixels) between the line shown along the axis and the inner boundary of the axis</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.axisLineWidth">
+<td><a href="#groupAxisConfig.axisLineWidth">axisLineWidth</a></td><td>the stroke width (in pixels) of the line shown along the axis</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.before">
+<td><a href="#groupAxisConfig.before">before</a></td><td>whether the axis should be position before (top/left) or after (bottom/right) the chart</td><td>should be a boolean</td><td><div>true (when chartConfig.inverted is true)</div>
+<div>false (when chartConfig.inverted is false)</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.collapsed">
+<td><a href="#groupAxisConfig.collapsed">collapsed</a></td><td>whether the axis should consume space in the layout (false) or not (true)</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.dateUTC">
+<td><a href="#groupAxisConfig.dateUTC">dateUTC</a></td><td>whether dates should be treated as UTC (true) or local (false)</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.displayProperty">
+<td><a href="#groupAxisConfig.displayProperty">displayProperty</a></td><td>the property to retrieve from the data provider for the group display values (use null for none)</td><td>should be a defined value or equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.focusedTickMarkColor">
+<td><a href="#groupAxisConfig.focusedTickMarkColor">focusedTickMarkColor</a></td><td>the color of the tick mark line(s)</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #0000ff"></span></div>
+</td>
+</tr>
+<tr id="groupAxisConfig.focusedTickMarkMargin">
+<td><a href="#groupAxisConfig.focusedTickMarkMargin">focusedTickMarkMargin</a></td><td>the margin (in pixels) to show between the inside of the axis and the focused tick mark line(s)</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.focusedTickMarkSize">
+<td><a href="#groupAxisConfig.focusedTickMarkSize">focusedTickMarkSize</a></td><td>the length (in pixels) of the focused tick mark line(s)</td><td>should be a number >= to 0</td><td><div>9</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.focusedTickMarkWidth">
+<td><a href="#groupAxisConfig.focusedTickMarkWidth">focusedTickMarkWidth</a></td><td>the stroke width (in pixels) of the tick mark line(s)</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.focusedTickMarks">
+<td><a href="#groupAxisConfig.focusedTickMarks">focusedTickMarks</a></td><td>whether to show lines perpendicular to the axis showing the focused series domain or group value</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.gridLineColor">
+<td><a href="#groupAxisConfig.gridLineColor">gridLineColor</a></td><td>the color of the grid lines</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #e5e5e5"></span></div>
+</td>
+</tr>
+<tr id="groupAxisConfig.gridLineDashArray">
+<td><a href="#groupAxisConfig.gridLineDashArray">gridLineDashArray</a></td><td>the dash array pattern to use when drawing the grid lines (use null for none)</td><td>should be a valid dash array or be equal to null</td><td><div>"5, 5"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.gridLineWidth">
+<td><a href="#groupAxisConfig.gridLineWidth">gridLineWidth</a></td><td>the stroke width (in pixels) of the grid lines</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.gridLines">
+<td><a href="#groupAxisConfig.gridLines">gridLines</a></td><td>whether to show grid lines perpendicular to each tick on the axis</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.groupCountPadding">
+<td><a href="#groupAxisConfig.groupCountPadding">groupCountPadding</a></td><td>the extra count to be added to the group value count when dividing the group extent for displaying group values</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.groupPadding">
+<td><a href="#groupAxisConfig.groupPadding">groupPadding</a></td><td>the padding percentages (0 - 1) of the group extent for all group values (outer) and grouped series (inner)</td><td>should be an object with properties [ "inner", "outer" ] all of which should be a number >= to 0 and <= 1</td><td><div>{
+inner: 0.1
+outer: 0.1}
+</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.max">
+<td><a href="#groupAxisConfig.max">max</a></td><td>the forced maximum numeric value for the axis (use "auto" to compute from the values)</td><td><p>should be an iso date string or epoch number or be equal to "auto" when scale is linear and type is date</p>
+<p>should be a number or be equal to "auto" when scale is linear and type is number</p>
+<p>should be equal to "auto" when scale is ordinal</p>
+</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.maxOffset">
+<td><a href="#groupAxisConfig.maxOffset">maxOffset</a></td><td>the numeric offset to apply to the maximum value of the axis</td><td><p>should be a number when scale is linear</p>
+<p>should be equal to 0 when scale is ordinal</p>
+</td><td><div>0</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.maxTickCount">
+<td><a href="#groupAxisConfig.maxTickCount">maxTickCount</a></td><td>the maximum number of ticks to show along the length of the axis (use 0 to disable the maximum)</td><td>should be an integer and >= to 0</td><td><div>10 (when scale is linear)</div>
+<div>0 (when scale is ordinal)</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.min">
+<td><a href="#groupAxisConfig.min">min</a></td><td>the forced minimum numeric value for the axis (use "auto" to compute from the values)</td><td><p>should be an iso date string or epoch number or be equal to "auto" when scale is linear and type is date</p>
+<p>should be a number or be equal to "auto" when scale is linear and type is number</p>
+<p>should be equal to "auto" when scale is ordinal</p>
+</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.minGroupValueExtent">
+<td><a href="#groupAxisConfig.minGroupValueExtent">minGroupValueExtent</a></td><td>the minimum group extent (in pixels) for a non-inverted bar this is the minimum width</td><td>should be a number >= to 1</td><td><div>1</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.minOffset">
+<td><a href="#groupAxisConfig.minOffset">minOffset</a></td><td>the numeric offset to apply to the minimum value of the axis</td><td><p>should be a number when scale is linear</p>
+<p>should be equal to 0 when scale is ordinal</p>
+</td><td><div>0</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.minTickInterval">
+<td><a href="#groupAxisConfig.minTickInterval">minTickInterval</a></td><td>the minimum space (in pixels) to allow between the the bounds of any tick label text</td><td>should be a number >= to 0</td><td><div>12 (when scale is linear)</div>
+<div>4 (when scale is ordinal)</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.property">
+<td><a href="#groupAxisConfig.property">property</a></td><td>the property to retrieve from the data provider for the group values</td><td>should be a defined value</td><td><div></div>
+</td>
+</tr>
+<tr id="groupAxisConfig.scale">
+<td><a href="#groupAxisConfig.scale">scale</a></td><td>the scale to use for the displayed group values (ordinal, linear)</td><td><p>should be equal to "ordinal" when type is string</p>
+<p>should be one of [ "linear", "ordinal" ]</p>
+</td><td><div>"ordinal"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.softMax">
+<td><a href="#groupAxisConfig.softMax">softMax</a></td><td>the forced maximum numeric value for the axis to be used if no data value is greater than this value (use null to disable)</td><td><p>should be an iso date string or epoch number or be equal to null when scale is linear and type is date</p>
+<p>should be a number or be equal to null when scale is linear and type is number</p>
+<p>should be equal to null when scale is ordinal</p>
+</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.softMin">
+<td><a href="#groupAxisConfig.softMin">softMin</a></td><td>the forced minimum numeric value for the axis to be used if no data value is less than this value (use null to disable)</td><td><p>should be an iso date string or epoch number or be equal to null when scale is linear and type is date</p>
+<p>should be a number or be equal to null when scale is linear and type is number</p>
+<p>should be equal to null when scale is ordinal</p>
+</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickCount">
+<td><a href="#groupAxisConfig.tickCount">tickCount</a></td><td>the number of ticks to show along the length of the axis (use "auto" to derive the tick count from the data)</td><td>should be an integer and >= to 0 or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelAnchor">
+<td><a href="#groupAxisConfig.tickLabelAnchor">tickLabelAnchor</a></td><td>the anchor to use for all tick labels (start, end, middle) (use "auto" to determine automatically)</td><td>should be one of [ "start", "end", "middle", "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelFormat">
+<td><a href="#groupAxisConfig.tickLabelFormat">tickLabelFormat</a></td><td>the d3 format string to be applied to the group values when displayed in axis tick labels (use null for none, use "auto" to derive from data)</td><td><p>should be one of [ null, "auto" ] when type is string</p>
+<p>should be a valid date format or be one of [ null, "auto" ] when type is date</p>
+<p>should be a valid number format or be one of [ null, "auto" ] when type is number</p>
+</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelInsideMargin">
+<td><a href="#groupAxisConfig.tickLabelInsideMargin">tickLabelInsideMargin</a></td><td>the margin (in pixels) to show between the tick labels and the inside of the axis</td><td>should be a number >= to 0</td><td><div>6</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelOutsideMargin">
+<td><a href="#groupAxisConfig.tickLabelOutsideMargin">tickLabelOutsideMargin</a></td><td>the margin (in pixels) to show between the tick labels and the outside of the axis</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelPrefix">
+<td><a href="#groupAxisConfig.tickLabelPrefix">tickLabelPrefix</a></td><td>the string to prefix to the text of each tick label (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelRotation">
+<td><a href="#groupAxisConfig.tickLabelRotation">tickLabelRotation</a></td><td>the rotation (in degrees) to apply to each tick label</td><td>should be a number >= to -90 and <= 90</td><td><div>0</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelSize">
+<td><a href="#groupAxisConfig.tickLabelSize">tickLabelSize</a></td><td>the space (in pixels) perpendicular to the axis direction to allocate for the tick labels (use "auto" to derive from the font size)</td><td>should be a number >= to 0 or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelSuffix">
+<td><a href="#groupAxisConfig.tickLabelSuffix">tickLabelSuffix</a></td><td>the string to append to the text of each tick label (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelTruncationEnabled">
+<td><a href="#groupAxisConfig.tickLabelTruncationEnabled">tickLabelTruncationEnabled</a></td><td>whether or not to use text truncation (true) when the axis tick labels would overlap each other instead of skipping ticks (false)</td><td><p>should be equal to false when scale is linear</p>
+<p>should be a boolean</p>
+</td><td><div>true (when type is string)</div>
+<div>false (when type is not string)</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelTruncationMaxPercent">
+<td><a href="#groupAxisConfig.tickLabelTruncationMaxPercent">tickLabelTruncationMaxPercent</a></td><td>the maximum percentage (0 - 1) of the chart bounds to allow any tick label text to occupy when they are perpendicular to the axis</td><td>should be a number >= to 0 and <= 1</td><td><div>0.2</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelTruncationMinLength">
+<td><a href="#groupAxisConfig.tickLabelTruncationMinLength">tickLabelTruncationMinLength</a></td><td>the minimum length at which to apply tick label truncation if the maximum percentage settings is used</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickLabelTruncationValue">
+<td><a href="#groupAxisConfig.tickLabelTruncationValue">tickLabelTruncationValue</a></td><td>the truncation text to append to the axis tick label text when its content is truncated</td><td>should be a string</td><td><div>"..."</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickMarkColor">
+<td><a href="#groupAxisConfig.tickMarkColor">tickMarkColor</a></td><td>the color of the tick mark lines</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #000000"></span></div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickMarkMargin">
+<td><a href="#groupAxisConfig.tickMarkMargin">tickMarkMargin</a></td><td>the margin (in pixels) to show between the inside of the axis and the tick mark lines</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickMarkSize">
+<td><a href="#groupAxisConfig.tickMarkSize">tickMarkSize</a></td><td>the length (in pixels) of the tick mark lines</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickMarkWidth">
+<td><a href="#groupAxisConfig.tickMarkWidth">tickMarkWidth</a></td><td>the stroke width (in pixels) of the tick mark lines</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.tickMarks">
+<td><a href="#groupAxisConfig.tickMarks">tickMarks</a></td><td>whether to show lines perpendicular to each tick value along the axis</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.title">
+<td><a href="#groupAxisConfig.title">title</a></td><td>the title text to be shown along side to the axis (use null for no title)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.titleInsideMargin">
+<td><a href="#groupAxisConfig.titleInsideMargin">titleInsideMargin</a></td><td>the margin (in pixels) to show between the axis title and the inside of the axis</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.titleOutsideMargin">
+<td><a href="#groupAxisConfig.titleOutsideMargin">titleOutsideMargin</a></td><td>the margin (in pixels) to show between the axis title and the outside of the axis</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.titleSize">
+<td><a href="#groupAxisConfig.titleSize">titleSize</a></td><td>the space (in pixels) perpendicular to the axis direction to allocate for the axis title (use "auto" to derive from the font size)</td><td>should be a number >= to 0 or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.titleTruncationEnabled">
+<td><a href="#groupAxisConfig.titleTruncationEnabled">titleTruncationEnabled</a></td><td>whether to apply text truncation to the contents of the axis title when it would overflow the axis bounds</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.titleTruncationValue">
+<td><a href="#groupAxisConfig.titleTruncationValue">titleTruncationValue</a></td><td>the truncation text to append to the axis title when its length exceeds the bounds of the axis</td><td>should be a string</td><td><div>"..."</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.type">
+<td><a href="#groupAxisConfig.type">type</a></td><td>the type of the displayed group values (number, date, string)</td><td>should be one of [ "number", "date", "string" ]</td><td><div>"string"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.valueFormat">
+<td><a href="#groupAxisConfig.valueFormat">valueFormat</a></td><td>the d3 format string to be applied to the group value when displayed in the tooltip (use null for none, use "auto" to derive from data)</td><td><p>should be one of [ null, "auto" ] when type is string</p>
+<p>should be a valid date format or be one of [ null, "auto" ] when type is date</p>
+<p>should be a valid number format or be one of [ null, "auto" ] when type is number</p>
+</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.valueLabel">
+<td><a href="#groupAxisConfig.valueLabel">valueLabel</a></td><td>the label to show before a group value in the tooltip (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.valuePrefix">
+<td><a href="#groupAxisConfig.valuePrefix">valuePrefix</a></td><td>the text to prefix group values with when showing them in the tooltip (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.valueSuffix">
+<td><a href="#groupAxisConfig.valueSuffix">valueSuffix</a></td><td>the text to append group values with when showing them in the tooltip (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="groupAxisConfig.visible">
+<td><a href="#groupAxisConfig.visible">visible</a></td><td>whether the axis should be visible</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="legendConfig">
+<h2>Legend Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="legendConfig.alignedToAxes">
+<td><a href="#legendConfig.alignedToAxes">alignedToAxes</a></td><td>whether the legend should be centered between the axes (true) or the chart bounds (false)</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="legendConfig.filterOnClick">
+<td><a href="#legendConfig.filterOnClick">filterOnClick</a></td><td>whether to suppress a series when the series icon or title is clicked</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="legendConfig.focusOnClick">
+<td><a href="#legendConfig.focusOnClick">focusOnClick</a></td><td>whether to focus a series when the series icon or title is clicked</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="legendConfig.focusOnMouseOver">
+<td><a href="#legendConfig.focusOnMouseOver">focusOnMouseOver</a></td><td>whether to focus a series when the mouse is moved over the series icon or title</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="legendConfig.iconBorderColor">
+<td><a href="#legendConfig.iconBorderColor">iconBorderColor</a></td><td>the color of the border drawn around series icons</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #999999"></span></div>
+</td>
+</tr>
+<tr id="legendConfig.iconBorderSize">
+<td><a href="#legendConfig.iconBorderSize">iconBorderSize</a></td><td>the width (in pixels) of the border drawn around series icons</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="legendConfig.iconSize">
+<td><a href="#legendConfig.iconSize">iconSize</a></td><td>the width and height (in pixels) of the series icons</td><td>should be a number >= to 0</td><td><div>12</div>
+</td>
+</tr>
+<tr id="legendConfig.iconSpacerSize">
+<td><a href="#legendConfig.iconSpacerSize">iconSpacerSize</a></td><td>the horizontal space (in pixels) to show between series icons and titles</td><td>should be a number >= to 0</td><td><div>4</div>
+</td>
+</tr>
+<tr id="legendConfig.iconSuppressedColor">
+<td><a href="#legendConfig.iconSuppressedColor">iconSuppressedColor</a></td><td>the color to use for the series icon when the corresponding series is suppressed</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(255,255,255,0)"></span></div>
+</td>
+</tr>
+<tr id="legendConfig.iconUnsuppressedColor">
+<td><a href="#legendConfig.iconUnsuppressedColor">iconUnsuppressedColor</a></td><td>the color to use for the placeholder series icons when the corresponding series is not suppressed</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(0,0,0,0.5)"></span></div>
+</td>
+</tr>
+<tr id="legendConfig.marginInner">
+<td><a href="#legendConfig.marginInner">marginInner</a></td><td>the margin (in pixels) to show between the legend and the chart contents</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="legendConfig.marginLeft">
+<td><a href="#legendConfig.marginLeft">marginLeft</a></td><td>the margin (in pixels) to show to the left of the legend</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="legendConfig.marginOuter">
+<td><a href="#legendConfig.marginOuter">marginOuter</a></td><td>the margin (in pixels) to show between the legend and the boundary of the chart</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="legendConfig.marginRight">
+<td><a href="#legendConfig.marginRight">marginRight</a></td><td>the margin (in pixels) to show to the right of the legend</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="legendConfig.position">
+<td><a href="#legendConfig.position">position</a></td><td>the position of the legend relative to the chart (top or bottom)</td><td>should be one of [ "top", "bottom" ]</td><td><div>"bottom"</div>
+</td>
+</tr>
+<tr id="legendConfig.showIconColors">
+<td><a href="#legendConfig.showIconColors">showIconColors</a></td><td>whether to show series colors next to series titles in the legend</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="legendConfig.showIconPlaceholders">
+<td><a href="#legendConfig.showIconPlaceholders">showIconPlaceholders</a></td><td>whether to show placeholder icons next to the series titles in the legend</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="legendConfig.visible">
+<td><a href="#legendConfig.visible">visible</a></td><td>whether the legend should be visible</td><td>should be a boolean</td><td><div>true (when seriesConfigs.length is > 1)</div>
+<div>false (when seriesConfigs.length is <= 1)</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="linearGradientConfigs">
+<h2>Linear Gradient Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="linearGradientConfigs.id">
+<td><a href="#linearGradientConfigs.id">id</a></td><td>the unique identifier for the gradient so that it can be referenced for use</td><td>should be a string</td><td><div></div>
+</td>
+</tr>
+<tr id="linearGradientConfigs.rotation">
+<td><a href="#linearGradientConfigs.rotation">rotation</a></td><td>the rotation property (in degrees) of the svg linear gradient</td><td>should be a number >= to -360 and <= 360</td><td><div>0</div>
+</td>
+</tr>
+<tr id="linearGradientConfigs.stops">
+<td><a href="#linearGradientConfigs.stops">stops</a></td><td>the list of svg gradient stops, with offet, color and opacity properties</td><td>should be a non-empty array with elements that should be an object with exact properties { offset: should be a number >= to 0 and <= 1, color: should be a valid color, opacity: should be a number >= to 0 and <= 1 }</td><td><div></div>
+</td>
+</tr>
+<tr id="linearGradientConfigs.x1">
+<td><a href="#linearGradientConfigs.x1">x1</a></td><td>the x1 property of the svg linear gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0</div>
+</td>
+</tr>
+<tr id="linearGradientConfigs.x2">
+<td><a href="#linearGradientConfigs.x2">x2</a></td><td>the x2 property of the svg linear gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>1</div>
+</td>
+</tr>
+<tr id="linearGradientConfigs.y1">
+<td><a href="#linearGradientConfigs.y1">y1</a></td><td>the x3 property of the svg linear gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0</div>
+</td>
+</tr>
+<tr id="linearGradientConfigs.y2">
+<td><a href="#linearGradientConfigs.y2">y2</a></td><td>the x4 property of the svg linear gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>1</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="radialGradientConfigs">
+<h2>Radial Gradient Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="radialGradientConfigs.cx">
+<td><a href="#radialGradientConfigs.cx">cx</a></td><td>the cx property of the svg radial gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0.5</div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.cy">
+<td><a href="#radialGradientConfigs.cy">cy</a></td><td>the cy property of the svg radial gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0.5</div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.fx">
+<td><a href="#radialGradientConfigs.fx">fx</a></td><td>the fx property of the svg radial gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0.5</div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.fy">
+<td><a href="#radialGradientConfigs.fy">fy</a></td><td>the fy property of the svg radial gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0.5</div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.id">
+<td><a href="#radialGradientConfigs.id">id</a></td><td>the unique identifier for the gradient so that it can be referenced for use</td><td>should be a string</td><td><div></div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.r">
+<td><a href="#radialGradientConfigs.r">r</a></td><td>the r property of the svg radial gradient</td><td>should be a number >= to 0 and <= 1</td><td><div>0.5</div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.rotation">
+<td><a href="#radialGradientConfigs.rotation">rotation</a></td><td>the rotation property (in degrees) of the svg radial gradient</td><td>should be a number >= to -360 and <= 360</td><td><div>0</div>
+</td>
+</tr>
+<tr id="radialGradientConfigs.stops">
+<td><a href="#radialGradientConfigs.stops">stops</a></td><td>the list of svg gradient stops, with offet, color and opacity properties</td><td>should be a non-empty array with elements that should be an object with exact properties { offset: should be a number >= to 0 and <= 1, color: should be a valid color, opacity: should be a number >= to 0 and <= 1 }</td><td><div></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="seriesAxisConfigs">
+<h2>Series Axis Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="seriesAxisConfigs.adjustForSuppression">
+<td><a href="#seriesAxisConfigs.adjustForSuppression">adjustForSuppression</a></td><td>whether to adjust the domain of the axis as series belonging to it are suppressed</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.adjustTickLabelSizeForSuppression">
+<td><a href="#seriesAxisConfigs.adjustTickLabelSizeForSuppression">adjustTickLabelSizeForSuppression</a></td><td>whether to adjust the size of the axis tick label bounds as series belonging to it are suppressed</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.alwaysVisible">
+<td><a href="#seriesAxisConfigs.alwaysVisible">alwaysVisible</a></td><td>whether the axis should be visible when all series belonging to it are suppressed</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.axisLine">
+<td><a href="#seriesAxisConfigs.axisLine">axisLine</a></td><td>whether to show a line along the length of the axis</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.axisLineColor">
+<td><a href="#seriesAxisConfigs.axisLineColor">axisLineColor</a></td><td>the color of the line shown along the axis</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #000000"></span></div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.axisLineDashArray">
+<td><a href="#seriesAxisConfigs.axisLineDashArray">axisLineDashArray</a></td><td>the dash array pattern to use when drawing the line shown along the axis (use null for none)</td><td>should be a valid dash array or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.axisLineMargin">
+<td><a href="#seriesAxisConfigs.axisLineMargin">axisLineMargin</a></td><td>the margin (in pixels) between the line shown along the axis and the inner boundary of the axis</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.axisLineWidth">
+<td><a href="#seriesAxisConfigs.axisLineWidth">axisLineWidth</a></td><td>the stroke width (in pixels) of the line shown along the axis</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.base">
+<td><a href="#seriesAxisConfigs.base">base</a></td><td>the numeric base value of the axis, used for animation and relative positioning for shapes (use null for none)</td><td>should be a number or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.before">
+<td><a href="#seriesAxisConfigs.before">before</a></td><td>whether the axis should be position before (top/left) or after (bottom/right) the chart</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.collapsed">
+<td><a href="#seriesAxisConfigs.collapsed">collapsed</a></td><td>whether the axis should consume space in the layout (false) or not (true)</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.focusedTickMarkColor">
+<td><a href="#seriesAxisConfigs.focusedTickMarkColor">focusedTickMarkColor</a></td><td>the color of the tick mark line(s)</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #0000ff"></span></div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.focusedTickMarkMargin">
+<td><a href="#seriesAxisConfigs.focusedTickMarkMargin">focusedTickMarkMargin</a></td><td>the margin (in pixels) to show between the inside of the axis and the focused tick mark line(s)</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.focusedTickMarkSize">
+<td><a href="#seriesAxisConfigs.focusedTickMarkSize">focusedTickMarkSize</a></td><td>the length (in pixels) of the focused tick mark line(s)</td><td>should be a number >= to 0</td><td><div>9</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.focusedTickMarkWidth">
+<td><a href="#seriesAxisConfigs.focusedTickMarkWidth">focusedTickMarkWidth</a></td><td>the stroke width (in pixels) of the tick mark line(s)</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.focusedTickMarks">
+<td><a href="#seriesAxisConfigs.focusedTickMarks">focusedTickMarks</a></td><td>whether to show lines perpendicular to the axis showing the focused series domain or group value</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.gridLineColor">
+<td><a href="#seriesAxisConfigs.gridLineColor">gridLineColor</a></td><td>the color of the grid lines</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #e5e5e5"></span></div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.gridLineDashArray">
+<td><a href="#seriesAxisConfigs.gridLineDashArray">gridLineDashArray</a></td><td>the dash array pattern to use when drawing the grid lines (use null for none)</td><td>should be a valid dash array or be equal to null</td><td><div>"5, 5"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.gridLineWidth">
+<td><a href="#seriesAxisConfigs.gridLineWidth">gridLineWidth</a></td><td>the stroke width (in pixels) of the grid lines</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.gridLines">
+<td><a href="#seriesAxisConfigs.gridLines">gridLines</a></td><td>whether to show grid lines perpendicular to each tick on the axis</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.id">
+<td><a href="#seriesAxisConfigs.id">id</a></td><td>the unique identifier for the series axis so it can be referenced by series that belong to it</td><td><p>should be a string</p>
+<p>should be unique</p>
+</td><td><div></div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.max">
+<td><a href="#seriesAxisConfigs.max">max</a></td><td>the forced maximum numeric value for the axis (use "auto" to compute from the values)</td><td>should be a number or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.maxMarginPercent">
+<td><a href="#seriesAxisConfigs.maxMarginPercent">maxMarginPercent</a></td><td>the percentage margin (0 - 1) relative to the domain of the axis to use at the maximum extent of the axis</td><td>should be a number >= to 0 and <= 1</td><td><div>0.05</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.maxOffset">
+<td><a href="#seriesAxisConfigs.maxOffset">maxOffset</a></td><td>the numeric offset to apply to the maximum value of the axis</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.maxTickCount">
+<td><a href="#seriesAxisConfigs.maxTickCount">maxTickCount</a></td><td>the maximum number of ticks to show along the length of the axis (use 0 to disable the maximum)</td><td>should be an integer and >= to 0</td><td><div>10</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.min">
+<td><a href="#seriesAxisConfigs.min">min</a></td><td>the forced minimum numeric value for the axis (use "auto" to compute from the values)</td><td>should be a number or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.minMarginPercent">
+<td><a href="#seriesAxisConfigs.minMarginPercent">minMarginPercent</a></td><td>the percentage margin (0 - 1) relative to the domain of the axis to use at the minimum extent of the axis</td><td>should be a number >= to 0 and <= 1</td><td><div>0.05</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.minOffset">
+<td><a href="#seriesAxisConfigs.minOffset">minOffset</a></td><td>the numeric offset to apply to the minimum value of the axis</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.minTickInterval">
+<td><a href="#seriesAxisConfigs.minTickInterval">minTickInterval</a></td><td>the minimum space (in pixels) to allow between the the bounds of any tick label text</td><td>should be a number >= to 0</td><td><div>12</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.order">
+<td><a href="#seriesAxisConfigs.order">order</a></td><td>the unique order number of the series axis controlling its order of appearance</td><td><p>should be a number</p>
+<p>should be unique</p>
+</td><td><div>${index} (series axis index)</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.scale">
+<td><a href="#seriesAxisConfigs.scale">scale</a></td><td>the scale of the series axis, must be linear</td><td>should be equal to "linear"</td><td><div>"linear"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.softMax">
+<td><a href="#seriesAxisConfigs.softMax">softMax</a></td><td>the forced maximum numeric value for the axis to be used if no data value is greater than this value (use null to disable)</td><td>should be a number or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.softMin">
+<td><a href="#seriesAxisConfigs.softMin">softMin</a></td><td>the forced minimum numeric value for the axis to be used if no data value is less than this value (use null to disable)</td><td>should be a number or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickCount">
+<td><a href="#seriesAxisConfigs.tickCount">tickCount</a></td><td>the number of ticks to show along the length of the axis (use "auto" to derive the tick count from the data)</td><td>should be an integer and >= to 0 or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelAnchor">
+<td><a href="#seriesAxisConfigs.tickLabelAnchor">tickLabelAnchor</a></td><td>the anchor to use for all tick labels (start, end, middle) (use "auto" to determine automatically)</td><td>should be one of [ "start", "end", "middle", "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelFormat">
+<td><a href="#seriesAxisConfigs.tickLabelFormat">tickLabelFormat</a></td><td>the d3 format string to be applied to the series values when displayed in axis tick labels (use null for none, use "auto" to derive from data)</td><td>should be a valid number format or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelInsideMargin">
+<td><a href="#seriesAxisConfigs.tickLabelInsideMargin">tickLabelInsideMargin</a></td><td>the margin (in pixels) to show between the tick labels and the inside of the axis</td><td>should be a number >= to 0</td><td><div>6</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelOutsideMargin">
+<td><a href="#seriesAxisConfigs.tickLabelOutsideMargin">tickLabelOutsideMargin</a></td><td>the margin (in pixels) to show between the tick labels and the outside of the axis</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelPrefix">
+<td><a href="#seriesAxisConfigs.tickLabelPrefix">tickLabelPrefix</a></td><td>the string to prefix to the text of each tick label (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelRotation">
+<td><a href="#seriesAxisConfigs.tickLabelRotation">tickLabelRotation</a></td><td>the rotation (in degrees) to apply to each tick label</td><td>should be a number >= to -90 and <= 90</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelSize">
+<td><a href="#seriesAxisConfigs.tickLabelSize">tickLabelSize</a></td><td>the space (in pixels) perpendicular to the axis direction to allocate for the tick labels (use "auto" to derive from the font size)</td><td>should be a number >= to 0 or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickLabelSuffix">
+<td><a href="#seriesAxisConfigs.tickLabelSuffix">tickLabelSuffix</a></td><td>the string to append to the text of each tick label (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickMarkColor">
+<td><a href="#seriesAxisConfigs.tickMarkColor">tickMarkColor</a></td><td>the color of the tick mark lines</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #000000"></span></div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickMarkMargin">
+<td><a href="#seriesAxisConfigs.tickMarkMargin">tickMarkMargin</a></td><td>the margin (in pixels) to show between the inside of the axis and the tick mark lines</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickMarkSize">
+<td><a href="#seriesAxisConfigs.tickMarkSize">tickMarkSize</a></td><td>the length (in pixels) of the tick mark lines</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickMarkWidth">
+<td><a href="#seriesAxisConfigs.tickMarkWidth">tickMarkWidth</a></td><td>the stroke width (in pixels) of the tick mark lines</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.tickMarks">
+<td><a href="#seriesAxisConfigs.tickMarks">tickMarks</a></td><td>whether to show lines perpendicular to each tick value along the axis</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.title">
+<td><a href="#seriesAxisConfigs.title">title</a></td><td>the title text to be shown along side to the axis (use null for no title)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.titleInsideMargin">
+<td><a href="#seriesAxisConfigs.titleInsideMargin">titleInsideMargin</a></td><td>the margin (in pixels) to show between the axis title and the inside of the axis</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.titleOutsideMargin">
+<td><a href="#seriesAxisConfigs.titleOutsideMargin">titleOutsideMargin</a></td><td>the margin (in pixels) to show between the axis title and the outside of the axis</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.titleSize">
+<td><a href="#seriesAxisConfigs.titleSize">titleSize</a></td><td>the space (in pixels) perpendicular to the axis direction to allocate for the axis title (use "auto" to derive from the font size)</td><td>should be a number >= to 0 or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.titleTruncationEnabled">
+<td><a href="#seriesAxisConfigs.titleTruncationEnabled">titleTruncationEnabled</a></td><td>whether to apply text truncation to the contents of the axis title when it would overflow the axis bounds</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.titleTruncationValue">
+<td><a href="#seriesAxisConfigs.titleTruncationValue">titleTruncationValue</a></td><td>the truncation text to append to the axis title when its length exceeds the bounds of the axis</td><td>should be a string</td><td><div>"..."</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.type">
+<td><a href="#seriesAxisConfigs.type">type</a></td><td>the type of the series axis, must be number</td><td>should be equal to "number"</td><td><div>"number"</div>
+</td>
+</tr>
+<tr id="seriesAxisConfigs.visible">
+<td><a href="#seriesAxisConfigs.visible">visible</a></td><td>whether the axis should be visible</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="seriesConfigs">
+<h2>Series Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="seriesConfigs.animateBaseFromAdjacent">
+<td><a href="#seriesConfigs.animateBaseFromAdjacent">animateBaseFromAdjacent</a></td><td>whether to animate leading/trailing series position values from their adjacent values (true) or from the base value (false)</td><td>should be a boolean</td><td><div>false (when renderer is bar)</div>
+<div>true (when renderer is line)</div>
+<div>true (when renderer is area)</div>
+<div>false (when renderer is none)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.axis">
+<td><a href="#seriesConfigs.axis">axis</a></td><td>the unique identifier of the axis that the series belongs to</td><td><p>should be a string</p>
+<p>should equal the id property of one of the seriesAxisConfigs</p>
+</td><td><div></div>
+</td>
+</tr>
+<tr id="seriesConfigs.capSize">
+<td><a href="#seriesConfigs.capSize">capSize</a></td><td>the size of the cap (in pixels) to use when drawing caps on a bar series</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesConfigs.capType">
+<td><a href="#seriesConfigs.capType">capType</a></td><td>the type (linear, curve) of cap to use when drawing caps on a bar series</td><td>should be one of [ "linear", "curve" ]</td><td><div>"linear"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorBase">
+<td><a href="#seriesConfigs.colorBase">colorBase</a></td><td>the base value to use for color interpolation, allowing 2 distinct sets of min & max colors for interpolation (use null for none)</td><td>should be a number or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorBaseAboveMax">
+<td><a href="#seriesConfigs.colorBaseAboveMax">colorBaseAboveMax</a></td><td>the maximum color to use when interpolating the series shape color with a colorProperty value that is above the colorBase (use null for none)</td><td><p>should be equal to null when colorProperty is null</p>
+<p>should be equal to null when colorProperty is not null and colorBase is null</p>
+<p>should be a valid color when colorProperty is not null and colorBase is not null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div>null (when colorProperty is not null and colorBase is null)</div>
+<div><span class="colorIcon" style="background-color: #0000ff"></span> (when colorProperty is not null and colorBase is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorBaseAboveMin">
+<td><a href="#seriesConfigs.colorBaseAboveMin">colorBaseAboveMin</a></td><td>the minimum color to use when interpolating the series shape color with a colorProperty value that is above the colorBase (use null for none)</td><td><p>should be equal to null when colorProperty is null</p>
+<p>should be equal to null when colorProperty is not null and colorBase is null</p>
+<p>should be a valid color when colorProperty is not null and colorBase is not null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div>null (when colorProperty is not null and colorBase is null)</div>
+<div><span class="colorIcon" style="background-color: #8f8fff"></span> (when colorProperty is not null and colorBase is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorBaseBelowMax">
+<td><a href="#seriesConfigs.colorBaseBelowMax">colorBaseBelowMax</a></td><td>the maximum color to use when interpolating the series shape color with a colorProperty value that is below the colorBase (use null for none)</td><td><p>should be equal to null when colorProperty is null</p>
+<p>should be equal to null when colorProperty is not null and colorBase is null</p>
+<p>should be a valid color when colorProperty is not null and colorBase is not null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div>null (when colorProperty is not null and colorBase is null)</div>
+<div><span class="colorIcon" style="background-color: #ff0000"></span> (when colorProperty is not null and colorBase is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorBaseBelowMin">
+<td><a href="#seriesConfigs.colorBaseBelowMin">colorBaseBelowMin</a></td><td>the minimum color to use when interpolating the series shape color with a colorProperty value that is below the colorBase (use null for none)</td><td><p>should be equal to null when colorProperty is null</p>
+<p>should be equal to null when colorProperty is not null and colorBase is null</p>
+<p>should be a valid color when colorProperty is not null and colorBase is not null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div>null (when colorProperty is not null and colorBase is null)</div>
+<div><span class="colorIcon" style="background-color: #ff8f8f"></span> (when colorProperty is not null and colorBase is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorInterpolation">
+<td><a href="#seriesConfigs.colorInterpolation">colorInterpolation</a></td><td>the type of d3 color interpolation to apply when using a color property (rgb, hsl, lab, hcl) (use null for none)</td><td><p>should be one of [ "rgb", "hsl", "lab", "hcl" ] when colorProperty is not null</p>
+<p>should be equal to null when colorProperty is null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div>"hcl" (when colorProperty is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorMax">
+<td><a href="#seriesConfigs.colorMax">colorMax</a></td><td>the maximum color to use when interpolating the series shape color with a colorProperty (use null for none)</td><td><p>should be equal to null when colorProperty is null</p>
+<p>should be equal to null when colorProperty is not null and colorBase is not null</p>
+<p>should be a valid color when colorProperty is not null and colorBase is null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div><span class="colorIcon" style="background-color: #0000ff"></span> (when colorProperty is not null and colorBase is null)</div>
+<div>null (when colorProperty is not null and colorBase is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorMin">
+<td><a href="#seriesConfigs.colorMin">colorMin</a></td><td>the minimum color to use when interpolating the series shape color with a colorProperty (use null for none)</td><td><p>should be equal to null when colorProperty is null</p>
+<p>should be equal to null when colorProperty is not null and colorBase is not null</p>
+<p>should be a valid color when colorProperty is not null and colorBase is null</p>
+</td><td><div>null (when colorProperty is null)</div>
+<div><span class="colorIcon" style="background-color: #8f8fff"></span> (when colorProperty is not null and colorBase is null)</div>
+<div>null (when colorProperty is not null and colorBase is not null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.colorProperty">
+<td><a href="#seriesConfigs.colorProperty">colorProperty</a></td><td>the property to retrieve from the data provider for the series color values (use null for none)</td><td>should be a defined value or equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.curve">
+<td><a href="#seriesConfigs.curve">curve</a></td><td>the d3 curve type and param to use when drawing the series shape</td><td>should be an object with exact properties { type: should be one of [ "linear", "monotoneX", "monotoneY", "basis", "cardinal", "catmullRom", "natural", "step", "stepBefore", "stepAfter" ], param: should be a number >= to 0 and <= 1 or be equal to undefined }</td><td><div>{
+type: "linear"}
+</div>
+</td>
+</tr>
+<tr id="seriesConfigs.fillColor">
+<td><a href="#seriesConfigs.fillColor">fillColor</a></td><td>the fill color to use for the series shape (use "seriesIndex" to apply the colorPaletteConfig series fillColor for the series index, use "groupIndex" to apply the colorPaletteConfig series fillColor for the group index)</td><td>should be a valid color or be one of [ "seriesIndex", "groupIndex" ]</td><td><div>"seriesIndex"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.focusOnClick">
+<td><a href="#seriesConfigs.focusOnClick">focusOnClick</a></td><td>whether the series should be focused whenever the user clicks/taps a part of it in the chart</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesConfigs.focusOnMouseOver">
+<td><a href="#seriesConfigs.focusOnMouseOver">focusOnMouseOver</a></td><td>whether the series should be focused whenever the user mouses over a part of it in the chart</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesConfigs.focusedFillColor">
+<td><a href="#seriesConfigs.focusedFillColor">focusedFillColor</a></td><td>the focused fill color to use for the series shape (use "same" to reuse the fillColor, use "seriesIndex" to apply the colorPaletteConfig seriesFocused fillColor for the series index, use "groupIndex" to apply the colorPaletteConfig seriesFocused fillColor for the group index)</td><td>should be a valid color or be one of [ "same", "seriesIndex", "groupIndex" ]</td><td><div>"same"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.focusedOpacity">
+<td><a href="#seriesConfigs.focusedOpacity">focusedOpacity</a></td><td>the focused opacity (0 - 1) of the series shape</td><td>should be a number >= to 0 and <= 1</td><td><div>1 (when renderer is bar)</div>
+<div>1 (when renderer is line)</div>
+<div>1 (when renderer is area)</div>
+<div>1 (when renderer is none)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.focusedStrokeColor">
+<td><a href="#seriesConfigs.focusedStrokeColor">focusedStrokeColor</a></td><td>the focused stroke color to use for the series shape (use "same" to reuse the strokeColor, use "seriesIndex" to apply the colorPaletteConfig seriesFocused strokeColor for the series index, use "groupIndex" to apply the colorPaletteConfig seriesFocused strokeColor for the group index)</td><td>should be a valid color or be one of [ "same", "seriesIndex", "groupIndex" ]</td><td><div>"same"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.focusedStrokeWidth">
+<td><a href="#seriesConfigs.focusedStrokeWidth">focusedStrokeWidth</a></td><td>the focused stroke width (in pixels) of the series shape</td><td>should be a number >= to 0</td><td><div>1 (when renderer is bar)</div>
+<div>4 (when renderer is line)</div>
+<div>1 (when renderer is area)</div>
+<div>0 (when renderer is none)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.gradient">
+<td><a href="#seriesConfigs.gradient">gradient</a></td><td>the unique id of the gradient config to be used when coloring the series shape (use null for none)</td><td><p>should be a string or be equal to null</p>
+<p>should equal the id property of one of the linearGradientConfigs or radialGradientConfigs</p>
+</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.group">
+<td><a href="#seriesConfigs.group">group</a></td><td>the unique identifier of the series group that the series belongs to (use null for none)</td><td><p>should be a string or be equal to null</p>
+<p>should equal the id property of one of the seriesGroupConfigs</p>
+</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.id">
+<td><a href="#seriesConfigs.id">id</a></td><td>the unique identifier for the series</td><td><p>should be a string</p>
+<p>should be unique</p>
+</td><td><div>S${index} (series index)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.ignore">
+<td><a href="#seriesConfigs.ignore">ignore</a></td><td>whether to ignore this series and treat it as though it were not specified</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelAboveBaseMaxPositionPercent">
+<td><a href="#seriesConfigs.labelAboveBaseMaxPositionPercent">labelAboveBaseMaxPositionPercent</a></td><td>the maximum position percentage (0 - 1) from the domain maximum for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelAboveBaseMinPositionPercent">
+<td><a href="#seriesConfigs.labelAboveBaseMinPositionPercent">labelAboveBaseMinPositionPercent</a></td><td>the minimum position percentage (0 - 1) above the base value for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelAboveBaseOffset">
+<td><a href="#seriesConfigs.labelAboveBaseOffset">labelAboveBaseOffset</a></td><td>the series position offset (in pixels) to apply to all series label positions that are above the base value (use "auto" to derive from the labelOffset)</td><td>should be a number or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelAboveBasePosition">
+<td><a href="#seriesConfigs.labelAboveBasePosition">labelAboveBasePosition</a></td><td>whether to position the series labels inside or outside of the series shape for series shapes that are above the base value</td><td>should be one of [ "auto", "inside", "center", "outside" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelBelowBaseMaxPositionPercent">
+<td><a href="#seriesConfigs.labelBelowBaseMaxPositionPercent">labelBelowBaseMaxPositionPercent</a></td><td>the maximum position percentage (0 - 1) below the base value for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelBelowBaseMinPositionPercent">
+<td><a href="#seriesConfigs.labelBelowBaseMinPositionPercent">labelBelowBaseMinPositionPercent</a></td><td>the minimum position percentage (0 - 1) from the domain minimum for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelBelowBaseOffset">
+<td><a href="#seriesConfigs.labelBelowBaseOffset">labelBelowBaseOffset</a></td><td>the series position offset (in pixels) to apply to all series label positions that are below the base value (use "auto" to derive from the labelOffset)</td><td>should be a number or be equal to "auto"</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelBelowBasePosition">
+<td><a href="#seriesConfigs.labelBelowBasePosition">labelBelowBasePosition</a></td><td>whether to position the series labels inside or outside of the series shape for series shapes that are below the base value</td><td>should be one of [ "auto", "inside", "center", "outside" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelFillColor">
+<td><a href="#seriesConfigs.labelFillColor">labelFillColor</a></td><td>the fill color to use for the series label values (use "series" to reuse the fillColor, use "seriesIndex" to apply the colorPaletteConfig label fillColor for the series index, use "groupIndex" to apply the colorPaletteConfig label fillColor for the group index)</td><td>should be a valid color or be one of [ "series", "seriesIndex", "groupIndex" ]</td><td><div><span class="colorIcon" style="background-color: #000000"></span></div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelFocusedFillColor">
+<td><a href="#seriesConfigs.labelFocusedFillColor">labelFocusedFillColor</a></td><td>the focused fill color to use for the series label values (use "series" to reuse the focusedFillColor, use "same" to reuse the labelFillColor, use "seriesIndex" to apply the colorPaletteConfig labelFocused fillColor for the series index, use "groupIndex" to apply the colorPaletteConfig labelFocused fillColor for the group index)</td><td>should be a valid color or be one of [ "series", "same", "seriesIndex", "groupIndex" ]</td><td><div>"same"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelFocusedOpacity">
+<td><a href="#seriesConfigs.labelFocusedOpacity">labelFocusedOpacity</a></td><td>the focused opacity (0 - 1) for the series label text</td><td>should be a number >= to 0 and <= 1</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelFocusedStrokeColor">
+<td><a href="#seriesConfigs.labelFocusedStrokeColor">labelFocusedStrokeColor</a></td><td>the focused stroke color to use for the series label values (use "series" to reuse the focusedStrokeColor, use "same" to reuse the labelStrokeColor, use "seriesIndex" to apply the colorPaletteConfig labelFocused strokeColor for the series index, use "groupIndex" to apply the colorPaletteConfig labelFocused strokeColor for the group index)</td><td>should be a valid color or be one of [ "series", "same", "seriesIndex", "groupIndex" ]</td><td><div>"same"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelFocusedStrokeWidth">
+<td><a href="#seriesConfigs.labelFocusedStrokeWidth">labelFocusedStrokeWidth</a></td><td>the focused stroke width (in pixels) for the series label text</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelFormat">
+<td><a href="#seriesConfigs.labelFormat">labelFormat</a></td><td>the d3 format string to be applied to the series label values (use null for none, use "auto" to derive from data)</td><td>should be a valid number format or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelMaxPositionPercent">
+<td><a href="#seriesConfigs.labelMaxPositionPercent">labelMaxPositionPercent</a></td><td>the maximum position percentage (0 - 1) from the domain maximum for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelMinPositionPercent">
+<td><a href="#seriesConfigs.labelMinPositionPercent">labelMinPositionPercent</a></td><td>the minimum position percentage (0 - 1) from the domain minimum for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelMinRangePercent">
+<td><a href="#seriesConfigs.labelMinRangePercent">labelMinRangePercent</a></td><td>the minimum position percentage (0 - 1) between two series values for which series labels should be shown (use null for none)</td><td>should be a number >= to 0 and <= 1 or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelOffset">
+<td><a href="#seriesConfigs.labelOffset">labelOffset</a></td><td>the series position offset (in pixels) to apply to all series label positions</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelOpacity">
+<td><a href="#seriesConfigs.labelOpacity">labelOpacity</a></td><td>the opacity (0 - 1) for the series label text</td><td>should be a number >= to 0 and <= 1</td><td><div>0.8</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelPosition">
+<td><a href="#seriesConfigs.labelPosition">labelPosition</a></td><td>whether to position the series labels inside or outside of the series shape</td><td>should be one of [ "inside", "center", "outside" ]</td><td><div>"center"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelProperty">
+<td><a href="#seriesConfigs.labelProperty">labelProperty</a></td><td>the property to retrieve from the data provider for the series label values (use null for none)</td><td>should be a defined value or equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelStrokeColor">
+<td><a href="#seriesConfigs.labelStrokeColor">labelStrokeColor</a></td><td>the stroke color to use for the series label values (use "series" to reuse the strokeColor, use "seriesIndex" to apply the colorPaletteConfig label strokeColor for the series index, use "groupIndex" to apply the colorPaletteConfig label strokeColor for the group index)</td><td>should be a valid color or be one of [ "series", "seriesIndex", "groupIndex" ]</td><td><div><span class="colorIcon" style="background-color: #000000"></span></div>
+</td>
+</tr>
+<tr id="seriesConfigs.labelStrokeWidth">
+<td><a href="#seriesConfigs.labelStrokeWidth">labelStrokeWidth</a></td><td>the stroke width (in pixels) for the series label text</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerFillColor">
+<td><a href="#seriesConfigs.markerFillColor">markerFillColor</a></td><td>the fill color to use for the series marker (use "series" to reuse the fillColor, use "seriesIndex" to apply the colorPaletteConfig marker fillColor for the series index, use "groupIndex" to apply the colorPaletteConfig marker fillColor for the group index)</td><td>should be a valid color or be one of [ "series", "seriesIndex", "groupIndex" ]</td><td><div>"series"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerFocusedFillColor">
+<td><a href="#seriesConfigs.markerFocusedFillColor">markerFocusedFillColor</a></td><td>the focused fill color to use for the series marker (use "series" to reuse the focusedFillColor, use "same" to reuse the markerFillColor, use "seriesIndex" to apply the colorPaletteConfig markerFocused fillColor for the series index, use "groupIndex" to apply the colorPaletteConfig markerFocused fillColor for the group index)</td><td>should be a valid color or be one of [ "series", "same", "seriesIndex", "groupIndex" ]</td><td><div>"same"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerFocusedOpacity">
+<td><a href="#seriesConfigs.markerFocusedOpacity">markerFocusedOpacity</a></td><td>the focused opacity (0 -1) for the series marker shape</td><td>should be a number >= to 0 and <= 1</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerFocusedStrokeColor">
+<td><a href="#seriesConfigs.markerFocusedStrokeColor">markerFocusedStrokeColor</a></td><td>the focused stroke color to use for the series marker (use "series" to reuse the focusedStrokeColor, use "same" to reuse the markerStrokeColor, use "seriesIndex" to apply the colorPaletteConfig markerFocused strokeColor for the series index, use "groupIndex" to apply the colorPaletteConfig markerFocused strokeColor for the group index)</td><td>should be a valid color or be one of [ "series", "same", "seriesIndex", "groupIndex" ]</td><td><div>"same"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerFocusedStrokeWidth">
+<td><a href="#seriesConfigs.markerFocusedStrokeWidth">markerFocusedStrokeWidth</a></td><td>the focused stroke width (in pixels) for the series marker shape</td><td>should be a number >= to 0</td><td><div>4</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerOpacity">
+<td><a href="#seriesConfigs.markerOpacity">markerOpacity</a></td><td>the opacity (0 -1) for the series marker shape</td><td>should be a number >= to 0 and <= 1</td><td><div>0.8</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerProperty">
+<td><a href="#seriesConfigs.markerProperty">markerProperty</a></td><td>the property to retrieve from the data provider for the marker size values (use null for none)</td><td>should be a defined value or equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerShape">
+<td><a href="#seriesConfigs.markerShape">markerShape</a></td><td>the shape to use when drawing the series marker (circle, cross, diamond, square, star, triangle, wye) (use null for none)</td><td>should be one of [ null, "circle", "cross", "diamond", "square", "star", "triangle", "wye" ]</td><td><div>null (when renderer is bar)</div>
+<div>"circle" (when renderer is line)</div>
+<div>"circle" (when renderer is area)</div>
+<div>"circle" (when renderer is none)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerSize">
+<td><a href="#seriesConfigs.markerSize">markerSize</a></td><td>the maximum marker size (in pixels) to use when interpolating the marker size based on a marker property value, or the marker size when no marker property is used</td><td>should be a number >= to 0</td><td><div>6</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerStrokeColor">
+<td><a href="#seriesConfigs.markerStrokeColor">markerStrokeColor</a></td><td>the stroke color to use for the series marker (use "series" to reuse the strokeColor, use "seriesIndex" to apply the colorPaletteConfig marker strokeColor for the series index, use "groupIndex" to apply the colorPaletteConfig marker strokeColor for the group index)</td><td>should be a valid color or be one of [ "series", "seriesIndex", "groupIndex" ]</td><td><div>"series"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.markerStrokeWidth">
+<td><a href="#seriesConfigs.markerStrokeWidth">markerStrokeWidth</a></td><td>the stroke width (in pixels) for the series marker shape</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesConfigs.minMarkerSize">
+<td><a href="#seriesConfigs.minMarkerSize">minMarkerSize</a></td><td>the minimum marker size (in pixels) to use when interpolating the marker size based on a marker property value</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="seriesConfigs.opacity">
+<td><a href="#seriesConfigs.opacity">opacity</a></td><td>the opacity (0 - 1) of the series shape</td><td>should be a number >= to 0 and <= 1</td><td><div>0.5 (when renderer is bar)</div>
+<div>0.8 (when renderer is line)</div>
+<div>0.5 (when renderer is area)</div>
+<div>0.8 (when renderer is none)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.order">
+<td><a href="#seriesConfigs.order">order</a></td><td>the unique order number of the series controlling its order of appearance</td><td><p>should be a number</p>
+<p>should be unique</p>
+</td><td><div>${index} (series index)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.property">
+<td><a href="#seriesConfigs.property">property</a></td><td>the property to retrieve from the data provider for the series values</td><td>should be a defined value</td><td><div></div>
+</td>
+</tr>
+<tr id="seriesConfigs.rangeProperty">
+<td><a href="#seriesConfigs.rangeProperty">rangeProperty</a></td><td>the property to retrieve from the data provider for the secondary series values (use null for none)</td><td>should be a defined value or equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.renderer">
+<td><a href="#seriesConfigs.renderer">renderer</a></td><td>the shape renderer to use when drawing the series shape (line, area, bar, none)</td><td>should be one of [ "bar", "line", "area", "none" ]</td><td><div>"line"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.showColorInLegend">
+<td><a href="#seriesConfigs.showColorInLegend">showColorInLegend</a></td><td>whether to show the series color as an icon next to the series title in the legend</td><td>should be a boolean</td><td><div>false (when color is groupIndex or colorProperty is not null)</div>
+<div>true (when color is not groupIndex and colorProperty is null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.showColorInTooltip">
+<td><a href="#seriesConfigs.showColorInTooltip">showColorInTooltip</a></td><td>whether to show the series color as an icon next to the series title in the tooltip</td><td>should be a boolean</td><td><div>false (when color is groupIndex or colorProperty is not null)</div>
+<div>true (when color is not groupIndex and colorProperty is null)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.showInLegend">
+<td><a href="#seriesConfigs.showInLegend">showInLegend</a></td><td>whether to show the series in the legend</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesConfigs.showInTooltip">
+<td><a href="#seriesConfigs.showInTooltip">showInTooltip</a></td><td>whether to show the series in the tooltip</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesConfigs.stack">
+<td><a href="#seriesConfigs.stack">stack</a></td><td>the unique identifier of the series stack that the series belongs to (use null for none)</td><td><p>should be a string or be equal to null</p>
+<p>should equal the id property of one of the seriesStackConfigs</p>
+<p>should equal the id property of one of the seriesStackConfigs that has the same axis property</p>
+</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.strokeColor">
+<td><a href="#seriesConfigs.strokeColor">strokeColor</a></td><td>the stroke color to use for the series shape (use "seriesIndex" to apply the colorPaletteConfig series strokeColor for the series index, use "groupIndex" to apply the colorPaletteConfig series strokeColor for the group index)</td><td>should be a valid color or be one of [ "seriesIndex", "groupIndex" ]</td><td><div>"seriesIndex"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.strokeWidth">
+<td><a href="#seriesConfigs.strokeWidth">strokeWidth</a></td><td>the stroke width (in pixels) of the series shape</td><td>should be a number >= to 0</td><td><div>0 (when renderer is bar)</div>
+<div>3 (when renderer is line)</div>
+<div>0 (when renderer is area)</div>
+<div>0 (when renderer is none)</div>
+</td>
+</tr>
+<tr id="seriesConfigs.suppressible">
+<td><a href="#seriesConfigs.suppressible">suppressible</a></td><td>whether or not the series can be suppressed from being shown in the chart</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesConfigs.title">
+<td><a href="#seriesConfigs.title">title</a></td><td>the title to display for the series in the legend (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.useTitleForValueLabel">
+<td><a href="#seriesConfigs.useTitleForValueLabel">useTitleForValueLabel</a></td><td>whether to use the title value for the valueLabel value when the valueLabel is not set</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="seriesConfigs.valueFormat">
+<td><a href="#seriesConfigs.valueFormat">valueFormat</a></td><td>the d3 format string to be applied to the series value when displayed in the tooltip (use null for none, use "auto" to derive from data)</td><td>should be a valid number format or be one of [ null, "auto" ]</td><td><div>"auto"</div>
+</td>
+</tr>
+<tr id="seriesConfigs.valueLabel">
+<td><a href="#seriesConfigs.valueLabel">valueLabel</a></td><td>the label to show before a series value in the tooltip (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.valuePrefix">
+<td><a href="#seriesConfigs.valuePrefix">valuePrefix</a></td><td>the text to prefix series values with when showing them in the tooltip (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="seriesConfigs.valueSuffix">
+<td><a href="#seriesConfigs.valueSuffix">valueSuffix</a></td><td>the text to append series values with when showing them in the tooltip (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="seriesGroupConfigs">
+<h2>Series Group Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="seriesGroupConfigs.id">
+<td><a href="#seriesGroupConfigs.id">id</a></td><td>the unique identifier for the series group so it can be referenced by series that belong to it</td><td><p>should be a string</p>
+<p>should be unique</p>
+</td><td><div></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="seriesStackConfigs">
+<h2>Series Stack Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="seriesStackConfigs.axis">
+<td><a href="#seriesStackConfigs.axis">axis</a></td><td>the unqiue identifier of the series axis that the series stack belongs to</td><td><p>should be a string</p>
+<p>should equal the id property of one of the seriesAxisConfigs</p>
+</td><td><div></div>
+</td>
+</tr>
+<tr id="seriesStackConfigs.id">
+<td><a href="#seriesStackConfigs.id">id</a></td><td>the unique identifier for the series stack so it can be referenced by series that belong to it</td><td><p>should be a string</p>
+<p>should be unique</p>
+</td><td><div></div>
+</td>
+</tr>
+</table>
+</div>
+<div id="titleConfig">
+<h2>Title Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="titleConfig.alignedToAxes">
+<td><a href="#titleConfig.alignedToAxes">alignedToAxes</a></td><td>whether the title should be centered between the axes (true) or the chart bounds (false)</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="titleConfig.marginInner">
+<td><a href="#titleConfig.marginInner">marginInner</a></td><td>the margin (in pixels) to show between the title and the chart contents</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="titleConfig.marginLeft">
+<td><a href="#titleConfig.marginLeft">marginLeft</a></td><td>the margin (in pixels) to show to the left of the title</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="titleConfig.marginOuter">
+<td><a href="#titleConfig.marginOuter">marginOuter</a></td><td>the margin (in pixels) to show between the title and the boundary of the chart</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="titleConfig.marginRight">
+<td><a href="#titleConfig.marginRight">marginRight</a></td><td>the margin (in pixels) to show to the right of the title</td><td>should be a number</td><td><div>0</div>
+</td>
+</tr>
+<tr id="titleConfig.title">
+<td><a href="#titleConfig.title">title</a></td><td>the text to display in the title at the top of the chart (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="titleConfig.truncationEnabled">
+<td><a href="#titleConfig.truncationEnabled">truncationEnabled</a></td><td>whether to use text truncation when the title width exceeds the width of the chart</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="titleConfig.truncationValue">
+<td><a href="#titleConfig.truncationValue">truncationValue</a></td><td>the truncation text to append to the title when its length exceeds the length of the chart</td><td>should be a string</td><td><div>"..."</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tooltipConfig">
+<h2>Tooltip Config</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th><th>Description</th><th>Validation Rules</th><th>Default</th>
+</tr>
+</thead>
+<tr id="tooltipConfig.adjustForSuppression">
+<td><a href="#tooltipConfig.adjustForSuppression">adjustForSuppression</a></td><td>whether to adjust the series values when series suppression changes</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.adjustSizeForSuppression">
+<td><a href="#tooltipConfig.adjustSizeForSuppression">adjustSizeForSuppression</a></td><td>whether to adjust the width of the tooltip when the series values change due to suppression changes</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.alignValues">
+<td><a href="#tooltipConfig.alignValues">alignValues</a></td><td>whether to right-align the values shown in the tooltip</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.backgroundColor">
+<td><a href="#tooltipConfig.backgroundColor">backgroundColor</a></td><td>the background color for the interior of the tooltip</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(255,255,255,0.9)"></span></div>
+</td>
+</tr>
+<tr id="tooltipConfig.borderColor">
+<td><a href="#tooltipConfig.borderColor">borderColor</a></td><td>the color of the border around the tooltip</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(0,0,0,0.3)"></span></div>
+</td>
+</tr>
+<tr id="tooltipConfig.borderRadius">
+<td><a href="#tooltipConfig.borderRadius">borderRadius</a></td><td>the radius (in pixels) of the corners of the tooltip</td><td>should be a number >= to 0</td><td><div>4</div>
+</td>
+</tr>
+<tr id="tooltipConfig.borderWidth">
+<td><a href="#tooltipConfig.borderWidth">borderWidth</a></td><td>the width (in pixels) of the the border around the tooltip</td><td>should be a number >= to 0</td><td><div>2</div>
+</td>
+</tr>
+<tr id="tooltipConfig.closeOnClick">
+<td><a href="#tooltipConfig.closeOnClick">closeOnClick</a></td><td>whether to hide the tooltip when the user clicks/taps within it</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.dropShadowBlurRadius">
+<td><a href="#tooltipConfig.dropShadowBlurRadius">dropShadowBlurRadius</a></td><td>the blur radius (in pixels) of the drop shadow effect used for the tooltip</td><td>should be a number >= to 0</td><td><div>10</div>
+</td>
+</tr>
+<tr id="tooltipConfig.dropShadowColor">
+<td><a href="#tooltipConfig.dropShadowColor">dropShadowColor</a></td><td>the color of the drop shadow effect used for the tooltip</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(0,0,0,0.3)"></span></div>
+</td>
+</tr>
+<tr id="tooltipConfig.dropShadowOffsetX">
+<td><a href="#tooltipConfig.dropShadowOffsetX">dropShadowOffsetX</a></td><td>the x offset (in pixels) of the drop shadow effect used for the tooltip</td><td>should be a number >= to 0</td><td><div>0</div>
+</td>
+</tr>
+<tr id="tooltipConfig.dropShadowOffsetY">
+<td><a href="#tooltipConfig.dropShadowOffsetY">dropShadowOffsetY</a></td><td>the y offset (in pixels) of the drop shadow effect used for the tooltip</td><td>should be a number >= to 0</td><td><div>5</div>
+</td>
+</tr>
+<tr id="tooltipConfig.filterOnSeriesClick">
+<td><a href="#tooltipConfig.filterOnSeriesClick">filterOnSeriesClick</a></td><td>whether series should be filtered when the user clicks/taps on them in the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.focusOnGroupClick">
+<td><a href="#tooltipConfig.focusOnGroupClick">focusOnGroupClick</a></td><td>whether group values should be focused when the user clicks/taps on them in the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.focusOnGroupMouseOver">
+<td><a href="#tooltipConfig.focusOnGroupMouseOver">focusOnGroupMouseOver</a></td><td>whether group values should be focused when the user mouses over them in the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.focusOnSeriesClick">
+<td><a href="#tooltipConfig.focusOnSeriesClick">focusOnSeriesClick</a></td><td>whether series should be focused when the user clicks/taps on them in the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.focusOnSeriesMouseOver">
+<td><a href="#tooltipConfig.focusOnSeriesMouseOver">focusOnSeriesMouseOver</a></td><td>whether series should be focused when the user mouses over them in the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.hideSuppressed">
+<td><a href="#tooltipConfig.hideSuppressed">hideSuppressed</a></td><td>whether to hide series that have been suppressed from the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.iconBorderColor">
+<td><a href="#tooltipConfig.iconBorderColor">iconBorderColor</a></td><td>the color of the border drawn around series icons</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: #999999"></span></div>
+</td>
+</tr>
+<tr id="tooltipConfig.iconBorderSize">
+<td><a href="#tooltipConfig.iconBorderSize">iconBorderSize</a></td><td>the width (in pixels) of the border drawn around series icons</td><td>should be a number >= to 0</td><td><div>1</div>
+</td>
+</tr>
+<tr id="tooltipConfig.iconSize">
+<td><a href="#tooltipConfig.iconSize">iconSize</a></td><td>the width and height (in pixels) of the series icons</td><td>should be a number >= to 0</td><td><div>12</div>
+</td>
+</tr>
+<tr id="tooltipConfig.iconSpacerSize">
+<td><a href="#tooltipConfig.iconSpacerSize">iconSpacerSize</a></td><td>the horizontal space (in pixels) to show between series icons and titles</td><td>should be a number >= to 0</td><td><div>4</div>
+</td>
+</tr>
+<tr id="tooltipConfig.iconSuppressedColor">
+<td><a href="#tooltipConfig.iconSuppressedColor">iconSuppressedColor</a></td><td>the color to use for the series icon when the corresponding series is suppressed</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(255,255,255,0)"></span></div>
+</td>
+</tr>
+<tr id="tooltipConfig.iconUnsuppressedColor">
+<td><a href="#tooltipConfig.iconUnsuppressedColor">iconUnsuppressedColor</a></td><td>the color to use for the placeholder series icons when the corresponding series is not suppressed</td><td>should be a valid color</td><td><div><span class="colorIcon" style="background-color: rgba(0,0,0,0.5)"></span></div>
+</td>
+</tr>
+<tr id="tooltipConfig.keepInside">
+<td><a href="#tooltipConfig.keepInside">keepInside</a></td><td>whether to keep the tooltip within the series drawing area (true) or allow it to overlap the axes (false)</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.linePadding">
+<td><a href="#tooltipConfig.linePadding">linePadding</a></td><td>the padding (in pixels) betwen each line of the tooltip</td><td>should be a number >= to 0</td><td><div>3</div>
+</td>
+</tr>
+<tr id="tooltipConfig.minWidth">
+<td><a href="#tooltipConfig.minWidth">minWidth</a></td><td>the minimum width (in pixels) for the tooltip</td><td>should be a number >= to 0</td><td><div>120</div>
+</td>
+</tr>
+<tr id="tooltipConfig.missingValueText">
+<td><a href="#tooltipConfig.missingValueText">missingValueText</a></td><td>the text to show for series that do not have defined values</td><td>should be a string</td><td><div>"N/A"</div>
+</td>
+</tr>
+<tr id="tooltipConfig.mouseOver">
+<td><a href="#tooltipConfig.mouseOver">mouseOver</a></td><td>whether the tooltip should be track the mouse position in the chart drawing area</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.padding">
+<td><a href="#tooltipConfig.padding">padding</a></td><td>the padding (in pixels) to show on each side of the tooltip</td><td>should be a number >= to 0</td><td><div>2</div>
+</td>
+</tr>
+<tr id="tooltipConfig.rangeValueText">
+<td><a href="#tooltipConfig.rangeValueText">rangeValueText</a></td><td>the text to use when joining the values for a series that has more than one value</td><td>should be a string</td><td><div>" - "</div>
+</td>
+</tr>
+<tr id="tooltipConfig.showControls">
+<td><a href="#tooltipConfig.showControls">showControls</a></td><td>whether the focus/filter controls should be shown at the top of the tooltip</td><td>should be a boolean</td><td><div>false</div>
+</td>
+</tr>
+<tr id="tooltipConfig.showIconColors">
+<td><a href="#tooltipConfig.showIconColors">showIconColors</a></td><td>whether to show series colors next to series titles in the legend</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.showIconPlaceholders">
+<td><a href="#tooltipConfig.showIconPlaceholders">showIconPlaceholders</a></td><td>whether to show placeholder icons next to the series titles in the legend</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.showMissingValues">
+<td><a href="#tooltipConfig.showMissingValues">showMissingValues</a></td><td>whether to show series that do not have defined values in the tooltip</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.snapToGroup">
+<td><a href="#tooltipConfig.snapToGroup">snapToGroup</a></td><td>whether the tooltip should be centered at the closest group value (true) or at the click/tap position (false)</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+<tr id="tooltipConfig.suppressedValueCharacter">
+<td><a href="#tooltipConfig.suppressedValueCharacter">suppressedValueCharacter</a></td><td>the character to show in place of each digit of a series value that has been suppressed (use null for none)</td><td>should be a string with length 1 or be equal to null</td><td><div>"-"</div>
+</td>
+</tr>
+<tr id="tooltipConfig.suppressedValueText">
+<td><a href="#tooltipConfig.suppressedValueText">suppressedValueText</a></td><td>the text to show for series that have been suppressed (use null for none)</td><td>should be a string or be equal to null</td><td><div>null</div>
+</td>
+</tr>
+<tr id="tooltipConfig.visible">
+<td><a href="#tooltipConfig.visible">visible</a></td><td>whether or not to show the tooltip</td><td>should be a boolean</td><td><div>true</div>
+</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

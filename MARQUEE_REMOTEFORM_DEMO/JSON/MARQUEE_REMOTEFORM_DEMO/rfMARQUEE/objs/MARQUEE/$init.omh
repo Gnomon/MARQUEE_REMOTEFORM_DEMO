@@ -1,0 +1,14 @@
+Set reference MyRef to $cobj
+JavaScript: MyRef.callMethod('$html')
+
+JavaScript: MyDefaultConfig = {
+JavaScript: version: '1.0.2',
+JavaScript: groupAxisConfig: {property: "name",type: "string",scale: "ordinal"},
+JavaScript: seriesAxisConfigs: [{id: "Y",min: 0}],
+JavaScript: seriesConfigs: [{id: "weight",axis: "Y",property: "weight",title: "Weight"},{id: "price", axis: "Y", property: "price", title: "Price"}]
+JavaScript: }
+
+JavaScript: __form.set('CONFIG',JSON.stringify(MyDefaultConfig))
+
+JavaScript: MyRef.callMethod('$redraw')
+Quit method
